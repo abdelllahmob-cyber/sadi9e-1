@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>متجر الرفوف العصرية</title>
+<title>عثمان لدراجات الهوائية</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 :root{
-  --primary:#8B5E3C;--primary-dark:#6B4226;--primary-light:#F5E6D3;
-  --accent:#C8956A;--accent2:#d4af37;
-  --text:#2C1810;--text-light:#7A6555;
-  --white:#fff;--bg:#FAF7F3;--card-bg:#fff;--border:#E0D3C5;
+  --primary:#1E40AF;--primary-dark:#112A6B;--primary-light:#E8EEF9;
+  --accent:#4F73C1;--accent2:#A3B7E6;
+  --text:#0F172A;--text-light:#475569;
+  --white:#fff;--bg:#F5F7FB;--card-bg:#fff;--border:#E6EAF2;
   --whatsapp:#25d366;--whatsapp-dark:#128c7e;
-  --shadow:0 4px 24px rgba(107,66,38,.10);--shadow-lg:0 8px 48px rgba(107,66,38,.18);
+  --shadow:0 4px 24px rgba(16,24,40,.06);--shadow-lg:0 8px 48px rgba(16,24,40,.12);
   --radius:16px;--radius-sm:10px;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -311,7 +311,7 @@ html[dir="ltr"] .nav-logo{margin-right:0}
     <a href="#" class="nav-logo">
       <div class="logo-icon"><i class="fa-solid fa-layer-group"></i></div>
       <div class="logo-text">
-        <div class="brand" data-i18n="store.name">متجر الرفوف العصرية</div>
+        <div class="brand" data-i18n="store.name">عثمان لدراجات الهوائية</div>
         <div class="sub" data-i18n="store.sub">خشب MDF • مودرن • أنيق</div>
       </div>
     </a>
@@ -323,7 +323,7 @@ html[dir="ltr"] .nav-logo{margin-right:0}
     </ul>
     <div class="nav-right">
       <button class="lang-btn" id="langBtn" onclick="toggleLang()">🇫🇷 FR</button>
-      <a href="https://wa.me/212771263305" class="nav-wa" target="_blank">
+      <a href="https://wa.me/212721203554" class="nav-wa" target="_blank">
         <i class="fa-brands fa-whatsapp"></i> <span data-i18n="nav.cta">اطلب الآن</span>
       </a>
       <a href="dashboard.html" class="merchant-btn">
@@ -342,7 +342,7 @@ html[dir="ltr"] .nav-logo{margin-right:0}
   <a href="#why" onclick="closeMenu()"><i class="fa-solid fa-star"></i> <span data-i18n="nav.why">مميزاتنا</span></a>
   <a href="#reviews" onclick="closeMenu()"><i class="fa-solid fa-comments"></i> <span data-i18n="nav.reviews">آراء الزبناء</span></a>
   <a href="#contact" onclick="closeMenu()"><i class="fa-solid fa-location-dot"></i> <span data-i18n="nav.contact">تواصل معنا</span></a>
-  <a href="https://wa.me/212771263305" class="m-wa" target="_blank">
+  <a href="https://wa.me/212721203554" class="m-wa" target="_blank">
     <i class="fa-brands fa-whatsapp"></i> <span data-i18n="nav.cta">اطلب الآن</span>
   </a>
   <button class="m-lang" onclick="toggleLang();closeMenu()">
@@ -383,93 +383,31 @@ html[dir="ltr"] .nav-logo{margin-right:0}
   </div>
   <div class="products-grid" id="productsGrid">
 
-    <!-- PRODUCT 1 – 180 DH -->
-    <div class="prod-card" id="p1">
-      <div class="gallery" id="g1">
-        <img src="images/product1/dims_p1.jpeg" class="active" alt="">
-        <img src="images/product1/white.jpeg"   alt="">
-        <img src="images/product1/Gray.jpeg"    alt="">
-        <img src="images/product1/p1_2.jpg"     alt="">
-        <button class="g-arr g-arr-r" onclick="slideG('g1',-1)">&#8249;</button>
-        <button class="g-arr g-arr-l" onclick="slideG('g1', 1)">&#8250;</button>
-        <div class="g-dots" id="dots-g1"></div>
-        <div class="g-badge" data-i18n="badge.new">🆕 جديد</div>
-        <div class="g-ship" data-i18n="badge.ship">🚚 فابور</div>
+    <!-- DEFAULT STATIC PRODUCT -->
+    <div class="prod-card" id="p_demo">
+      <div class="gallery" id="g_demo">
+        <img src="https://via.placeholder.com/800x800?text=منتج+تجريبي" class="active" alt="">
+        <img src="https://via.placeholder.com/800x800?text=صورة+2" alt="">
+        <img src="https://via.placeholder.com/800x800?text=صورة+3" alt="">
+        <img src="https://via.placeholder.com/800x800?text=صورة+4" alt="">
+        <button class="g-arr g-arr-r" onclick="slideG('g_demo',-1)">&#8249;</button>
+        <button class="g-arr g-arr-l" onclick="slideG('g_demo', 1)">&#8250;</button>
+        <div class="g-dots" id="dots-g_demo"></div>
+        <div class="g-badge">✨ منتج تجريبي</div>
+        <div class="g-ship">🚚 فابور</div>
       </div>
       <div class="card-body">
-        <div class="card-name" data-i18n="p1.name">رف جداري عصري صغير — خشب MDF</div>
-        <div class="card-sub" data-i18n="p1.sub">مثالي للمطبخ، الصالون أو أي مساحة داخل المنزل</div>
+        <div class="card-name">سمية منتج تجريبي أول</div>
+        <div class="card-sub">وصف قصير للمنتج الجديد</div>
         <div class="price-row">
-          <div class="price">180 <small data-i18n="currency">درهم</small></div>
+          <div class="price">199 <small data-i18n="currency">درهم</small></div>
           <div class="stars-wrap"><span class="stars">★★★★★</span><span class="stars-val">5.0</span></div>
         </div>
-        <a href="https://wa.me/212771263305?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A8%D8%BA%D9%8A%D8%AA%20%D9%86%D8%B7%D9%84%D8%A8%20%D8%A7%D9%84%D8%B1%D9%81%20%D8%A7%D9%84%D8%AC%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%A7%D9%84%D8%B5%D8%BA%D9%8A%D8%B1%20(180%20%D8%AF%D8%B1%D9%87%D9%85)" class="order-btn" target="_blank">
+        <a href="https://wa.me/212721203554?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A8%D8%BA%D9%8A%D8%AA%20%D9%86%D8%B7%D9%84%D8%A8%20%D8%B3%D9%85%D9%8A%D8%A9%20%D9%85%D9%86%20%D9%85%D8%AA%D8%AC%D8%B1%20(199%20%D8%AF%D8%B1%D9%87%D9%85)" class="order-btn" target="_blank">
           <i class="fa-brands fa-whatsapp" style="font-size:19px"></i>
           <span data-i18n="btn.order">اطلب الآن عبر واتساب</span>
         </a>
         <a href="product.html?id=1" class="details-btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span data-i18n="btn.details">عرض تفاصيل المنتج</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- PRODUCT 2 – 219 DH -->
-    <div class="prod-card" id="p2">
-      <div class="gallery" id="g2">
-        <img src="images/product2/dims_p2.jpeg" class="active" alt="">
-        <img src="images/product2/p2_oak.jpg"   alt="">
-        <img src="images/product2/p2_gray.jpg"  alt="">
-        <img src="images/product2/p2_white.jpg" alt="">
-        <button class="g-arr g-arr-r" onclick="slideG('g2',-1)">&#8249;</button>
-        <button class="g-arr g-arr-l" onclick="slideG('g2', 1)">&#8250;</button>
-        <div class="g-dots" id="dots-g2"></div>
-        <div class="g-badge" data-i18n="badge.best">⭐ الأكثر مبيعاً</div>
-        <div class="g-ship" data-i18n="badge.ship">🚚 فابور</div>
-      </div>
-      <div class="card-body">
-        <div class="card-name" data-i18n="p2.name">رفوف جدارية عصرية كبيرة — خشب MDF</div>
-        <div class="card-sub" data-i18n="p2.sub">مثالية للحمام، الصالون، غرفة النوم أو المكتب</div>
-        <div class="price-row">
-          <div class="price">219 <small data-i18n="currency">درهم</small></div>
-          <div class="stars-wrap"><span class="stars">★★★★★</span><span class="stars-val">5.0</span></div>
-        </div>
-        <a href="https://wa.me/212771263305?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A8%D8%BA%D9%8A%D8%AA%20%D9%86%D8%B7%D9%84%D8%A8%20%D8%A7%D9%84%D8%B1%D9%81%D9%88%D9%81%20%D8%A7%D9%84%D8%AC%D8%AF%D8%A7%D8%B1%D9%8A%D8%A9%20%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1%D8%A9%20(219%20%D8%AF%D8%B1%D9%87%D9%85)" class="order-btn" target="_blank">
-          <i class="fa-brands fa-whatsapp" style="font-size:19px"></i>
-          <span data-i18n="btn.order">اطلب الآن عبر واتساب</span>
-        </a>
-        <a href="product.html?id=2" class="details-btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span data-i18n="btn.details">عرض تفاصيل المنتج</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- PRODUCT 3 – 849 DH -->
-    <div class="prod-card" id="p3">
-      <div class="gallery" id="g3">
-        <img src="images/product3/ccc1.jpeg" class="active" alt="">
-        <img src="images/product3/CCC2.jpeg" alt="">
-        <img src="images/product3/CCC3.jpeg" alt="">
-        <img src="images/product3/CCC4.jpeg" alt="">
-        <button class="g-arr g-arr-r" onclick="slideG('g3',-1)">&#8249;</button>
-        <button class="g-arr g-arr-l" onclick="slideG('g3', 1)">&#8250;</button>
-        <div class="g-dots" id="dots-g3"></div>
-        <div class="g-badge" data-i18n="badge.smart">🔒 ذكي</div>
-        <div class="g-ship" data-i18n="badge.ship">🚚 فابور</div>
-      </div>
-      <div class="card-body">
-        <div class="card-name" data-i18n="p3.name">كوافوز Smart RIDKA — خشب MDF بقفل RFID</div>
-        <div class="card-sub" data-i18n="p3.sub">أمان وتقنية في قطعة أثاث واحدة لغرفة النوم</div>
-        <div class="price-row">
-          <div class="price">849 <small data-i18n="currency">درهم</small></div>
-          <div class="stars-wrap"><span class="stars">★★★★★</span><span class="stars-val">5.0</span></div>
-        </div>
-        <a href="https://wa.me/212771263305?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A8%D8%BA%D9%8A%D8%AA%20%D9%86%D8%B7%D9%84%D8%A8%20%D9%83%D9%88%D8%A7%D9%81%D9%88%D8%B2%20Smart%20RIDKA%20(849%20%D8%AF%D8%B1%D9%87%D9%85)" class="order-btn" target="_blank">
-          <i class="fa-brands fa-whatsapp" style="font-size:19px"></i>
-          <span data-i18n="btn.order">اطلب الآن عبر واتساب</span>
-        </a>
-        <a href="product.html?id=3" class="details-btn">
           <i class="fa-solid fa-magnifying-glass"></i>
           <span data-i18n="btn.details">عرض تفاصيل المنتج</span>
         </a>
@@ -626,7 +564,7 @@ html[dir="ltr"] .nav-logo{margin-right:0}
 /* ═══ TRANSLATIONS ═══ */
 const T = {
 ar:{
-  'store.name':'متجر الرفوف العصرية','store.sub':'خشب MDF • مودرن • أنيق',
+  'store.name':'عثمان لدراجات الهوائية','store.sub':'خشب MDF • مودرن • أنيق',
   'banner.ship':'التوصيل مجاني (فابور)','banner.all':'لجميع الطلبات في المغرب','banner.price':'أسعار خاصة بدون منافسة',
   'nav.products':'المنتجات','nav.why':'مميزاتنا','nav.reviews':'آراء الزبناء','nav.contact':'تواصل معنا','nav.cta':'اطلب الآن',
   'hero.badge':'رفوف خشبية MDF بتصميم مودرن','hero.h1':'جمّل بيتك','hero.h1b':'بأناقة لا مثيل لها',
@@ -667,7 +605,7 @@ ar:{
   'r2.text':'شريت الرفوف الكبيرة للحمام وماشاء الله الجودة عالية، اللون زين بزاف والتوصيل فابور.','r2.name':'يوسف الإدريسي','r2.sub':'الرباط • الرفوف الكبيرة',
   'r3.text':'خدمة ممتازة، الرف وصل مغلف مزيان وما فيه حتى خدش. شكله في الصالون بارز بزاف.','r3.name':'نادية بنعلي','r3.sub':'مراكش • الرف الصغير',
   'contact.tag':'تواصل معنا','contact.title':'نحن هنا لمساعدتك','contact.sub':'تواصل معنا عبر واتساب أو زر محلنا مباشرة','contact.h3':'معلومات التواصل',
-  'ci.wa':'واتساب','ci.wa.sub':'0771 26 33 05 — متاح على مدار اليوم',
+  'ci.wa':'واتساب','ci.wa.sub':'212721203554 — متاح على مدار اليوم',
   'ci.delivery':'التوصيل','ci.delivery.sub':'مجاني لجميع مدن المغرب • 24 إلى 72 ساعة',
   'ci.location':'موقع المحل','ci.location.sub':'اضغط على الخريطة لتجدنا مباشرة',
   'ci.hours':'ساعات العمل','ci.hours.sub':'كل يوم من 9 صباحاً حتى 9 مساءً',
@@ -782,9 +720,7 @@ function buildGallery(gId) {
   }, {passive:true});
 }
 
-buildGallery('g1');
-buildGallery('g2');
-buildGallery('g3');
+  ['g_demo','g1','g2','g3'].forEach(id => { if (document.getElementById(id)) buildGallery(id); });
 
 applyLang(currentLang);
 
@@ -818,11 +754,11 @@ adjustNav();
 /* ══════════════════════════════════════════════════
    SUPABASE — تحميل المنتجات + Details Modal
 ══════════════════════════════════════════════════ */
-(function () {
-  var SB_URL = 'https://bylisjawltitosfbtwzw.supabase.co';
-  var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ5bGlzamF3bHRpdG9zZmJ0d3p3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4NTYwNzEsImV4cCI6MjA5NDQzMjA3MX0.aRq9q5qV8_0lwiv5rQQRaHcb7GdBBjNmxcOtV1mfvdE';
+  (function () {
+  var SB_URL = 'https://lajdomfflyakphtbyfnv.supabase.co';
+  var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxhamRvbWZmbHlha3BodGJ5Zm52Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMzM1NTgsImV4cCI6MjA5NDcwOTU1OH0.9rdQkkmRgz-DPsKWscif6Q6v7RCZ64Dn6T3EZjNCbpI';
   var sb  = window.supabase.createClient(SB_URL, SB_KEY);
-  var WA  = '212771263305';
+  var WA  = '212721203554';
   var GRID = document.getElementById('productsGrid');
   if (!GRID) return;
 

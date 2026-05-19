@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>لوحة التحكم — متجر الرفوف العصرية</title>
+<title>لوحة التحكم — عثمان لدراجات الهوائية</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 :root{
-  --primary:#8B5E3C;--primary-dark:#6B4226;--primary-light:#F5E6D3;
-  --accent:#C8956A;--text:#2C1810;--text-light:#7A6555;
-  --bg:#FAF7F3;--card:#fff;--border:#E0D3C5;
+  --primary:#1E40AF;--primary-dark:#112A6B;--primary-light:#E8EEF9;
+  --accent:#4F73C1;--text:#0F172A;--text-light:#475569;
+  --bg:#F5F7FB;--card:#fff;--border:#E6EAF2;
   --red:#dc2626;--red-light:#fef2f2;--red-border:#fecaca;
   --green:#16a34a;--green-light:#f0fdf4;--green-border:#bbf7d0;
-  --shadow:0 4px 24px rgba(107,66,38,.10);--shadow-lg:0 8px 48px rgba(107,66,38,.18);
+  --shadow:0 4px 24px rgba(16,24,40,.06);--shadow-lg:0 8px 48px rgba(16,24,40,.12);
   --r:16px;--rs:10px;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -183,7 +183,7 @@ html[dir="rtl"] .gate-inp{padding:12px 46px 12px 16px}
   <div class="gate-box">
     <div class="gate-ico"><i class="fa-solid fa-lock"></i></div>
     <div class="gate-ttl">لوحة التحكم</div>
-    <div class="gate-sub">متجر الرفوف العصرية — دخول التجار</div>
+    <div class="gate-sub">عثمان لدراجات الهوائية — دخول التجار</div>
     <label class="gate-lbl" for="gateInp">كلمة السر</label>
     <div class="gate-inp-wrap">
       <input type="password" id="gateInp" class="gate-inp" placeholder="• • • • • •" maxlength="20"
@@ -206,7 +206,7 @@ html[dir="rtl"] .gate-inp{padding:12px 46px 12px 16px}
       <div class="dash-logo-ico"><i class="fa-solid fa-layer-group"></i></div>
       <div>
         <div class="dash-logo-name">لوحة التحكم</div>
-        <div class="dash-logo-sub">متجر الرفوف العصرية</div>
+        <div class="dash-logo-sub">عثمان لدراجات الهوائية</div>
       </div>
     </a>
     <nav class="dash-links">
@@ -308,7 +308,7 @@ html[dir="rtl"] .gate-inp{padding:12px 46px 12px 16px}
 /* ══════════════════════════════════════════
    PASSWORD GATE
 ══════════════════════════════════════════ */
-var GATE_PASS = '2026';
+var GATE_PASS = 'otman';
 
 (function() {
   if (sessionStorage.getItem('merchant_auth') === '1') {
@@ -356,8 +356,8 @@ function toggleGateEye() {
 /* ══════════════════════════════════════════
    SUPABASE CONFIG
 ══════════════════════════════════════════ */
-var SB_URL = 'https://bylisjawltitosfbtwzw.supabase.co';
-var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ5bGlzamF3bHRpdG9zZmJ0d3p3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4NTYwNzEsImV4cCI6MjA5NDQzMjA3MX0.aRq9q5qV8_0lwiv5rQQRaHcb7GdBBjNmxcOtV1mfvdE';
+var SB_URL = 'https://lajdomfflyakphtbyfnv.supabase.co';
+var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxhamRvbWZmbHlha3BodGJ5Zm52Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMzM1NTgsImV4cCI6MjA5NDcwOTU1OH0.9rdQkkmRgz-DPsKWscif6Q6v7RCZ64Dn6T3EZjNCbpI';
 var db = window.supabase.createClient(SB_URL, SB_KEY);
 
 var allProducts   = [];
