@@ -9,11 +9,11 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 :root{
-  --primary:#1E40AF;--primary-dark:#112A6B;--primary-light:#E8EEF9;
-  --accent:#4F73C1;--text:#0F172A;--text-light:#475569;
-  --bg:#F5F7FB;--card:#fff;--border:#E6EAF2;
+  --primary:#8B5E3C;--primary-dark:#6B4226;--primary-light:#F5E6D3;
+  --accent:#C8956A;--text:#2C1810;--text-light:#7A6555;
+  --bg:#FAF7F3;--card:#fff;--border:#E0D3C5;
   --wa:#25d366;--wa-dark:#128c7e;
-  --shadow:0 4px 24px rgba(16,24,40,.06);--shadow-lg:0 8px 48px rgba(16,24,40,.12);
+  --shadow:0 4px 24px rgba(107,66,38,.10);--shadow-lg:0 8px 48px rgba(107,66,38,.18);
   --r:16px;--rs:10px;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -196,7 +196,7 @@ textarea.f-inp{resize:vertical;min-height:90px;line-height:1.65}
     </a>
     <div class="nav-brand">
       <span class="ar">عثمان لدراجات الهوائية</span>
-      <span class="fr">Étagères Modernes</span>
+      <span class="fr">Othman Cycles</span>
     </div>
     <button class="lang-btn" id="langBtn" onclick="toggleLang()">🇫🇷 FR</button>
   </div>
@@ -378,21 +378,42 @@ textarea.f-inp{resize:vertical;min-height:90px;line-height:1.65}
    PRODUCTS DATA — only real photos, no SVG placeholders
 ══════════════════════════════════════════════════════ */
 const PRODUCTS = {
+
   1: {
-    name: { ar: 'سمية منتج تجريبي أول', fr: 'Produit test 1' },
-    sub:  { ar: 'وصف قصير للمنتج الجديد', fr: 'Description courte du produit' },
+    name: { ar: 'سمية منتج تجريبي أول', fr: 'Produit Test Exemple 1' },
+    sub:  { ar: 'منتج تجريبي افتراضي لواجهة المتجر', fr: 'Produit de démonstration pour l’interface' },
     price: 199,
     imgs: [
-      'https://via.placeholder.com/800x800?text=منتج+تجريبي',
-      'https://via.placeholder.com/800x800?text=صورة+2',
-      'https://via.placeholder.com/800x800?text=صورة+3',
-      'https://via.placeholder.com/800x800?text=صورة+4'
+      'https://via.placeholder.com/800x800/1d4ed8/ffffff?text=%D8%AF%D8%B1%D8%A7%D8%AC%D8%A9+%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9+1',
+      'https://via.placeholder.com/800x800/2563eb/ffffff?text=%D8%AF%D8%B1%D8%A7%D8%AC%D8%A9+%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9+2',
+      'https://via.placeholder.com/800x800/1e3a8a/ffffff?text=%D8%AF%D8%B1%D8%A7%D8%AC%D8%A9+%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9+3',
+      'https://via.placeholder.com/800x800/60a5fa/ffffff?text=%D8%AF%D8%B1%D8%A7%D8%AC%D8%A9+%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9+4'
     ],
     desc: {
-      ar: '<p class="desc-p">وصف قصير للمنتج الجديد.</p>',
-      fr: '<p class="desc-p">Description courte du produit.</p>'
+      ar: `
+        <p class="desc-p">هذا منتج تجريبي جديد يعرض شكل المنتج الافتراضي في واجهة المتجر. تم تصميمه ليعطي انطباعاً احترافياً حتى يبدأ العميل بإضافة منتجاته الخاصة.</p>
+        <div class="feat-list">
+          <p>✅ سعر تجريبي ثابت</p>
+          <p>✅ رابط واتساب ذكي للطلب</p>
+          <p>✅ سلايدر صور احترافي بأربع صور</p>
+          <p>✅ وصف مختصر ومناسب للواجهة</p>
+          <p>✅ صورة مؤقتة Placeholder حتى يتم رفع صور المنتج الحقيقي</p>
+        </div>
+      `,
+      fr: `
+        <p class="desc-p">Ceci est un produit de démonstration affiché dans l'interface du magasin. Il est conçu pour donner une présentation professionnelle jusqu'à ce que le client ajoute son propre produit.</p>
+        <div class="feat-list">
+          <p>✅ Prix d'exemple fixe</p>
+          <p>✅ Lien WhatsApp intelligent pour commande</p>
+          <p>✅ Slider d'images professionnel avec quatre images</p>
+          <p>✅ Description courte adaptée à l'interface</p>
+          <p>✅ Image de remplacement Placeholder jusqu'à l'ajout de vraies photos</p>
+        </div>
+      `
     }
-  }
+  },
+
+
 };
 
 /* ══════ STATE ══════ */
@@ -426,7 +447,7 @@ function loadProduct() {
     p.price + '<small style="font-size:14px;color:var(--text-light);font-weight:600"> ' +
     (lang === 'ar' ? 'درهم' : 'Dh') + '</small>';
   document.getElementById('gPhTxt').textContent = p.name[lang] || p.name.ar;
-  document.title = (p.name[lang] || p.name.ar) + ' – متجر الرفوف';
+  document.title = (p.name[lang] || p.name.ar) + ' – عثمان لدراجات الهوائية';
 
   // gallery
   curImg = 0;
@@ -567,7 +588,7 @@ function displayDBProduct(p) {
     price + '<small style="font-size:14px;color:var(--text-light);font-weight:600"> ' +
     (lang === 'ar' ? 'درهم' : 'Dh') + '</small>';
   document.getElementById('gPhTxt').textContent = name;
-  document.title = name + ' – متجر الرفوف';
+  document.title = name + ' – عثمان لدراجات الهوائية';
 
   /* ── Gallery (4 صور محتملة) ── */
   var imgs = [p.image_url, p.image_url2, p.image_url3, p.image_url4].filter(Boolean);
@@ -741,8 +762,8 @@ function share() {
 /* ══════════════════════════════════════════════════════
    SUPABASE — Admin panel logic
 ══════════════════════════════════════════════════════ */
-var _SB_URL = 'https://lajdomfflyakphtbyfnv.supabase.co';
-var _SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxhamRvbWZmbHlha3BodGJ5Zm52Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMzM1NTgsImV4cCI6MjA5NDcwOTU1OH0.9rdQkkmRgz-DPsKWscif6Q6v7RCZ64Dn6T3EZjNCbpI';
+var _SB_URL = 'https://aakqduswtaukntedhonp.supabase.co';
+var _SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFha3FkdXN3dGF1a250ZWRob25wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMzY1NjksImV4cCI6MjA5NDcxMjU2OX0.kqUXN73oTZnN2FGAjluX5ybXMIVcsttDchHr69eqfd8';
 var _db = window.supabase.createClient(_SB_URL, _SB_KEY);
 
 /* Open admin modal when ?admin=1 — requires merchant auth */
